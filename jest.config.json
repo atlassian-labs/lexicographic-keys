@@ -1,0 +1,7 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "collectCoverage": true,
+  "testMatch": ["**/**/*.test.ts"],
+  "setupFilesAfterEnv": ["jest-matcher-specific-error"]
+}
