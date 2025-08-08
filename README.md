@@ -2,7 +2,7 @@
 
 [![Atlassian license](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat-square)](LICENSE) [![npm version](https://img.shields.io/npm/v/@atlassian/xencoding.svg?style=flat-square)](https://www.npmjs.com/package/@atlassian/xencoding) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 
-Xencoding is a lexicographical encoding library that converts mixed-type data (strings and numbers) into sortable string keys. This enables efficient range queries and prefix matching in key-value stores, databases, and other systems that rely on lexicographical ordering.
+Xencoding is a lexicographical encoding library that converts mixed-type data (strings and numbers) into sortable string keys. This enables efficient range queries and prefix matching in key-value stores\databases (i.e DynamoDB), and other systems that rely on lexicographical ordering.
 
 ## Key Features
 
@@ -14,7 +14,7 @@ Xencoding is a lexicographical encoding library that converts mixed-type data (s
 
 ## Why Xencoding?
 
-Xencoding offers several advantages over alternative encoding libraries like [https://github.com/dominictarr/charwise](charwise):
+Xencoding offers several advantages over alternative encoding libraries like [charwise](https://github.com/dominictarr/charwise):
 
 - **Human-Readable Output**: Generated keys are a lot more readable
 - **Proper Integer Handling**: Treats integers as integers rather than converting them to floats, preserving precision and natural sorting
@@ -170,12 +170,6 @@ Run the test suite:
 
 ```bash
 yarn test
-```
-
-Or with npm:
-
-```bash
-npm test
 ```
 
 The library includes comprehensive tests covering:

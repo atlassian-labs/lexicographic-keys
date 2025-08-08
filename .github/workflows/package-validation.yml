@@ -1,0 +1,70 @@
+name: Package Validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-package:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package-manager: [npm, yarn]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build package
+        run: |
+          yarn install --frozen-lockfile
+          yarn build
+
+      - name: Pack package
+        run: npm pack
+
+      - name: Create test project
+        run: |
+          mkdir test-project
+          cd test-project
+          npm init -y
+          echo '{"type": "module"}' > package.json
+
+      - name: Install packed package with ${{ matrix.package-manager }}
+        run: |
+          cd test-project
+          if [ "${{ matrix.package-manager }}" = "yarn" ]; then
+            yarn add ../atlassian-xencoding-*.tgz
+          else
+            npm install ../atlassian-xencoding-*.tgz
+          fi
+
+      - name: Test package usage
+        run: |
+          cd test-project
+          cat > test.mjs << 'EOF'
+          import { encode, decode } from '@atlassian/xencoding';
+
+          // Test basic functionality
+          const encoded = encode('test', 123, 'data');
+          console.log('Encoded:', encoded);
+
+          const decoded = decode(encoded);
+          console.log('Decoded:', decoded);
+
+          // Verify the result
+          if (decoded.length !== 3 || decoded[0] !== 'test' || decoded[1] !== 123 || decoded[2] !== 'data') {
+            throw new Error('Package test failed');
+          }
+
+          console.log('✅ Package validation successful');
+          EOF
+
+          node test.mjs

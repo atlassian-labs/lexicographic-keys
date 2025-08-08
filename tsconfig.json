@@ -41,5 +41,6 @@
     "skipLibCheck": false,
 
     "erasableSyntaxOnly": true
-  }
+  },
+  "include": ["./src/**/*.ts"]
 }
