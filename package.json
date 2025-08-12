@@ -1,11 +1,23 @@
 {
-  "name": "@atlassian/xencoding",
+  "name": "@lexicographic/keys",
   "version": "0.9.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "Apache-2.0",
   "description": "Lexicographical encoding library",
   "author": "Atlassian",
+  "keywords": [
+    "encoding",
+    "lexicographical",
+    "lexicographic",
+    "gsi",
+    "global secondary index",
+    "dynamo",
+    "dynamodb",
+    "lsi",
+    "sorted keys"
+  ],
+  "public": true,
   "contributors": [
     {
       "name": "Daniel Hreben",
@@ -20,9 +32,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:atlassian-labs/xencoding.git"
+    "url": "git+ssh://git@github.com/atlassian-labs/lexicographic-keys.git"
   },
-  "homepage": "https://github.com/atlassian-labs/xencoding/",
+  "homepage": "https://github.com/atlassian-labs/lexicographic-keys/",
   "files": [
     "dist/",
     "!dist/__test__/**"

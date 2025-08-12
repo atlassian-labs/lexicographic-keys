@@ -1,6 +1,6 @@
-# Contributing to Xencoding
+# Contributing to @lexicographic/keys
 
-Thank you for considering a contribution to Xencoding! Pull requests, issues and comments are welcome. For pull requests, please:
+Thank you for considering a contribution to `@lexicographic/keys`! Pull requests, issues and comments are welcome. For pull requests, please:
 
 * Add tests for new features and bug fixes
 * Follow the existing style

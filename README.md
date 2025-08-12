@@ -1,8 +1,8 @@
-# Xencoding
+# @lexicographic/keys
 
-[![Atlassian license](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat-square)](LICENSE) [![npm version](https://img.shields.io/npm/v/@atlassian/xencoding.svg?style=flat-square)](https://www.npmjs.com/package/@atlassian/xencoding) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
+[![Atlassian license](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat-square)](LICENSE) [![npm version](https://img.shields.io/npm/v/@lexicographic/keys.svg?style=flat-square)](https://www.npmjs.com/package/@lexicographic/keys) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 
-Xencoding is a lexicographical encoding library that converts mixed-type data (strings and numbers) into sortable string keys. This enables efficient range queries and prefix matching in key-value stores\databases (i.e DynamoDB), and other systems that rely on lexicographical ordering.
+`@lexicographic/keys` is a lexicographical encoding library that converts mixed-type data (strings and numbers) into sortable string keys. This enables efficient range queries and prefix matching in key-value stores\databases (i.e DynamoDB), and other systems that rely on lexicographical ordering.
 
 ## Key Features
 
@@ -12,9 +12,9 @@ Xencoding is a lexicographical encoding library that converts mixed-type data (s
 - **Type Safety**: Full TypeScript support with comprehensive type definitions
 - **Zero Dependencies**: Lightweight pure JavaScript implementation
 
-## Why Xencoding?
+## Why `@lexicographic/keys`?
 
-Xencoding offers several advantages over alternative encoding libraries like [charwise](https://github.com/dominictarr/charwise):
+`@lexicographic/keys` offers several advantages over alternative encoding libraries like [charwise](https://github.com/dominictarr/charwise):
 
 - **Human-Readable Output**: Generated keys are a lot more readable
 - **Proper Integer Handling**: Treats integers as integers rather than converting them to floats, preserving precision and natural sorting
@@ -26,7 +26,7 @@ Xencoding offers several advantages over alternative encoding libraries like [ch
 ### Basic Encoding and Decoding
 
 ```typescript
-import { encode, decode } from '@atlassian/xencoding';
+import { encode, decode } from '@lexicographic/keys';
 
 // Encode mixed types into a sortable string
 const key = encode('user', 42, 'profile');
@@ -40,7 +40,7 @@ console.log(values); // ['user', 42, 'profile']
 ### Lexicographical Ordering
 
 ```typescript
-import { encode } from '@atlassian/xencoding';
+import { encode } from '@lexicographic/keys';
 
 // Create keys that sort correctly
 const keys = [
@@ -64,7 +64,7 @@ console.log(sorted);
 ### Prefix Matching
 
 ```typescript
-import { encode } from '@atlassian/xencoding';
+import { encode } from '@lexicographic/keys';
 
 // Create a prefix for queries
 const prefix = encode('app', 'deployment');
@@ -89,7 +89,7 @@ console.log(matchingKeys);
 ### Working with Negative Numbers
 
 ```typescript
-import { encode, decode } from '@atlassian/xencoding';
+import { encode, decode } from '@lexicographic/keys';
 
 // Negative numbers are supported and sort correctly
 const keys = [
@@ -107,13 +107,13 @@ console.log(keys.sort());
 ## Installation
 
 ```bash
-yarn add @atlassian/xencoding
+yarn add @lexicographic/keys
 ```
 
 Or with npm:
 
 ```bash
-npm install @atlassian/xencoding
+npm install @lexicographic/keys
 ```
 
 ## API Documentation
@@ -182,7 +182,7 @@ The library includes comprehensive tests covering:
 
 ## Contributions
 
-Contributions to Xencoding are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+Contributions to `@lexicographic/keys` are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## License
 

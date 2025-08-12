@@ -41,16 +41,16 @@ jobs:
         run: |
           cd test-project
           if [ "${{ matrix.package-manager }}" = "yarn" ]; then
-            yarn add ../atlassian-xencoding-*.tgz
+            yarn add ../lexicographic-keys-*.tgz
           else
-            npm install ../atlassian-xencoding-*.tgz
+            npm install ../lexicographic-keys-*.tgz
           fi
 
       - name: Test package usage
         run: |
           cd test-project
           cat > test.mjs << 'EOF'
-          import { encode, decode } from '@atlassian/xencoding';
+          import { encode, decode } from '@lexicographic/keys';
 
           // Test basic functionality
           const encoded = encode('test', 123, 'data');
