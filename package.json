@@ -17,7 +17,7 @@
     "lsi",
     "sorted keys"
   ],
-  "public": true,
+  "private": false,
   "contributors": [
     {
       "name": "Daniel Hreben",
