@@ -49,8 +49,10 @@
     "node": ">=20.0.0"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.0",
     "@types/jest": "^30.0.0",
     "eslint": "^10.0.0",
+    "globals": "^17.0.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-simple-import-sort": "^12.1.1",
