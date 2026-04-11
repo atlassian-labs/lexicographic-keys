@@ -39,6 +39,9 @@
     "dist/",
     "!dist/__test__/**"
   ],
+  "publishConfig": {
+    "registry": "https://packages.atlassian.com/api/npm/npm-public/"
+  },
   "scripts": {
     "test": "jest --config jest.config.json",
     "build": "tsc --project tsconfig.json",
