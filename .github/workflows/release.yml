@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -37,6 +39,6 @@ jobs:
           output-modes: npm
 
       - name: Publish to Artifactory npm-public
-        run: npm publish
+        run: yarn release
         env:
           NPM_CONFIG_USERCONFIG: ${{ github.workspace }}/.npmrc-public
