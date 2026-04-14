@@ -39,6 +39,6 @@ jobs:
           output-modes: npm
 
       - name: Publish to Artifactory npm-public
-        run: npm publish
+        run: yarn release
         env:
           NPM_CONFIG_USERCONFIG: ${{ github.workspace }}/.npmrc-public

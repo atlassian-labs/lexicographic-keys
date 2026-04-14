@@ -40,9 +40,11 @@
     "!dist/__test__/**"
   ],
   "publishConfig": {
-    "registry": "https://packages.atlassian.com/api/npm/npm-public/"
+    "registry": "https://packages.atlassian.com/api/npm/npm-public/",
+    "access": "public"
   },
   "scripts": {
+    "release": "yarn build && changeset publish",
     "test": "jest --config jest.config.json",
     "build": "tsc --project tsconfig.json",
     "lint": "eslint ./src --config eslint.config.mts --ext .ts"
@@ -52,13 +54,14 @@
     "node": ">=20.0.0"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.30.0",
     "@eslint/js": "^10.0.0",
     "@types/jest": "^30.0.0",
     "eslint": "^10.0.0",
-    "globals": "^17.0.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-simple-import-sort": "^13.0.0",
+    "globals": "^17.0.0",
     "jest": "^30.0.5",
     "jest-matcher-specific-error": "^1.0.0",
     "jiti": "^2.5.1",
